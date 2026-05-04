@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゴールデンウィークの営業について | Nature Breathe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
+        .site-header { background-color: #f9fbf9 !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; padding: 15px 20px !important; border-bottom: 2px solid #333 !important; height: 70px !important; box-sizing: border-box !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; }
+        .header-left { position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; font-weight: bold !important; font-size: 1.2rem !important; color: #333 !important; white-space: nowrap !important; }
+        .header-right { width: 100% !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; gap: 20px !important; font-weight: bold !important; font-size: 14px !important; }
+        .nav-link { text-decoration: none !important; color: #333 !important; white-space: nowrap !important; font-weight: bold !important; font-size: 16px !important; }
+        .search-form { display: flex !important; width: 250px !important; }
+        .search-input { width: 100% !important; padding: 8px 12px !important; border: 1px solid #333 !important; border-right: none !important; border-radius: 4px 0 0 4px !important; outline: none !important; font-size: 14px !important; background-color: #fff !important; }
+        .search-btn { padding: 8px 15px !important; background-color: #333 !important; color: #fff !important; border: 1px solid #333 !important; border-radius: 0 4px 4px 0 !important; cursor: pointer !important; font-weight: bold !important; white-space: nowrap !important; }
+        
+        .main-content { flex: 1; padding: 80px 0; }
+        .content-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .news-date { color: #888; font-weight: bold; margin-bottom: 10px; display: block; text-align: center; }
+        .page-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; font-family: 'Noto Sans JP', sans-serif; line-height: 1.4; }
+        .news-text { line-height: 2; color: #444; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">サンプルサイト</div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link">TOPへ戻る</a>
+            <form class="search-form" action="index.html" method="get">
+                <input type="text" name="q" class="search-input" placeholder="サイト内検索...">
+                <button type="submit" class="search-btn">検索</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="content-inner">
+            <span class="news-date">2026年4月15日</span>
+            <h1 class="page-title">ゴールデンウィークの営業について</h1>
+            <div class="news-text">
+                誠に勝手ながら、4月29日から5月5日までの期間をゴールデンウィーク休業とさせていただきます。期間中のご注文・お問い合わせにつきましては、5月6日より順次対応させていただきます。ご不便をおかけいたしますが、何卒ご了承ください。
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-links container">
+            <a href="about.html">会社概要</a>
+            <a href="philosophy.html">企業理念</a>
+        </div>
+        <div class="copyright-text">
+            &copy; 2026 Nature Breathe. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

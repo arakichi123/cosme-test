@@ -7,27 +7,131 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        .site-header { background-color: #ffff00 !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; padding: 15px 20px !important; border-bottom: 2px solid #333 !important; height: 70px !important; box-sizing: border-box !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; }
-        .header-left { position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; font-weight: bold !important; font-size: 1.2rem !important; color: #333 !important; white-space: nowrap !important; }
-        .header-right { width: 100% !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; gap: 20px !important; font-weight: bold !important; font-size: 14px !important; }
-        .nav-link { text-decoration: none !important; color: #333 !important; white-space: nowrap !important; font-weight: bold !important; font-size: 16px !important; }
-        .product-detail-container { max-width: 1000px; margin: 60px auto; padding: 0 20px; display: flex; gap: 50px; align-items: flex-start; }
-        .product-visual { flex: 1; }
-        .product-visual img { width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .product-desc { flex: 1; }
-        .product-tag { display: inline-block; background: #c2a3d4; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 15px; }
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .site-header {
+            background-color: #f9fbf9 !important;
+            display: flex !important;
+            justify-content: flex-end !important;
+            align-items: center !important;
+            padding: 15px 20px !important;
+            border-bottom: 2px solid #333 !important;
+            height: 70px !important;
+            box-sizing: border-box !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+        }
+        .header-left {
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            font-weight: bold !important;
+            font-size: 1.2rem !important;
+            color: #333 !important;
+            white-space: nowrap !important;
+        }
+        .header-right {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: flex-end !important;
+            align-items: center !important;
+            gap: 20px !important;
+            font-weight: bold !important;
+            font-size: 14px !important;
+        }
+        .nav-link {
+            text-decoration: none !important;
+            color: #333 !important;
+            white-space: nowrap !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+        }
+        .search-form {
+            display: flex !important;
+            width: 250px !important;
+        }
+        .search-input {
+            width: 100% !important;
+            padding: 8px 12px !important;
+            border: 1px solid #333 !important;
+            border-right: none !important;
+            border-radius: 4px 0 0 4px !important;
+            outline: none !important;
+            font-size: 14px !important;
+            background-color: #fff !important;
+        }
+        .search-btn {
+            padding: 8px 15px !important;
+            background-color: #333 !important;
+            color: #fff !important;
+            border: 1px solid #333 !important;
+            border-radius: 0 4px 4px 0 !important;
+            cursor: pointer !important;
+            font-weight: bold !important;
+            white-space: nowrap !important;
+        }
+        .product-detail-container {
+            flex: 1;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .product-visual {
+            width: 100%;
+        }
+        .product-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .product-desc {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .product-tag {
+            display: inline-block;
+            background: #a8c1a3;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
         .product-name { font-size: 2.5rem; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
         .product-price { font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; color: #444; }
         .product-text { line-height: 1.8; color: #666; margin-bottom: 30px; }
-        .btn-buy { display: inline-block; background: #333; color: #fff; padding: 15px 40px; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background 0.3s; }
-        .site-footer { text-align: center; padding: 40px; border-top: 1px solid #eee; }
-        @media (max-width: 768px) { .product-detail-container { flex-direction: column; } }
+        .site-footer { text-align: center; padding: 40px 0; border-top: 1px solid #eee; background: #fff; }
+        @media (max-width: 768px) {
+            .product-name { font-size: 1.8rem; }
+            .header-right { gap: 10px; }
+            .search-form { width: 180px !important; }
+        }
     </style>
 </head>
-<body>
-    <header class="site-header"><div class="header-left">サンプルサイト</div><div class="header-right"><a href="index.html" class="nav-link">TOPへ戻る</a></div></header>
+<body>    <header class="site-header">
+        <div class="header-left">サンプルサイト</div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link">TOPへ戻る</a>
+            <form class="search-form" action="index.html" method="get">
+                <input type="text" name="q" class="search-input" placeholder="サイト内検索...">
+                <button type="submit" class="search-btn">検索</button>
+            </form>
+        </div>
+    </header>
     <main class="product-detail-container">
         <div class="product-visual"><img src="assets/images/banner6.png" alt="Product 6"></div>
         <div class="product-desc">
@@ -38,9 +142,36 @@
                 <p>100%天然由来。顔、体、髪、どこにでも使える万能マルチオイル。ラベンダーとローズの香りが心まで癒します。</p>
                 <p>数滴を手に取り、乾燥が気になる部分になじませてください。ヘアオイルとしてお使いいただく場合は、毛先を中心に少量ずつお使いください。</p>
             </div>
-            <a href="#" class="btn-buy">カートに追加する</a>
         </div>
     </main>
-    <footer class="site-footer"><div class="copyright-text">&copy; 2026 Nature Breathe. All Rights Reserved.</div></footer>
+        
+        <div class="number-links-wrapper">
+            <div class="container">
+                <h2 class="section-title">Pick Up</h2>
+            </div>
+            <section class="number-links">
+                <button class="slider-arrow slider-prev">&#10094;</button>
+                <button class="slider-arrow slider-next">&#10095;</button>
+                <div class="carousel-track">
+                    <a href="product1.html" class="num-card"><img src="assets/images/banner1.png" alt="Lotion"></a>
+                    <a href="product2.html" class="num-card"><img src="assets/images/banner2.png" alt="Serum"></a>
+                    <a href="product3.html" class="num-card"><img src="assets/images/banner3.png" alt="Cream"></a>
+                    <a href="product4.html" class="num-card"><img src="assets/images/banner4.png" alt="Wash"></a>
+                    <a href="product5.html" class="num-card"><img src="assets/images/banner5.png" alt="UV"></a>
+                    <a href="product7.html" class="num-card"><img src="assets/images/banner7.png" alt="Body"></a>
+                </div>
+            </section>
+        </div>
+
+        <footer class="site-footer">
+        <div class="footer-links container">
+            <a href="about.html">会社概要</a>
+            <a href="philosophy.html">企業理念</a>
+        </div>
+        <div class="copyright-text">
+            &copy; 2026 Nature Breathe. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>

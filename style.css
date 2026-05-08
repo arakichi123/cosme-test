@@ -156,15 +156,6 @@ body {
     right: 10px;
 }
 
-/* 検索メッセージ */
-.search-result-msg {
-    padding: 15px;
-    background: #fff;
-    border-left: 5px solid #ffff00;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
 /* フッター */
 .site-footer {
     padding: 40px;
